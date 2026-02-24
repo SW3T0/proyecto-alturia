@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-white dark:bg-[#0a0a0a] transition-colors duration-300"
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-white dark:bg-[#0a0a0a] transition-colors duration-300 max-w-[100vw]"
     >
       {/* Gradient background effects */}
       <div className="absolute inset-0 overflow-hidden">
@@ -26,7 +26,7 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-32 pb-20">
+      <div className="relative z-10 w-full max-w-5xl mx-auto px-5 sm:px-6 lg:px-8 text-center pt-32 pb-20 box-border">
         {/* Badge */}
         <div className="inline-flex items-center px-4 py-2 bg-black/5 dark:bg-white/10 backdrop-blur-sm rounded-full border border-black/10 dark:border-white/10 mb-8 opacity-0" style={{ animation: 'heroFadeIn 0.8s ease-out 0.1s forwards' }}>
           <span className="text-emerald-600 dark:text-emerald-400 text-sm font-medium">
@@ -35,7 +35,7 @@ export default function Hero() {
         </div>
 
         {/* Main heading */}
-        <h1 className="text-[2.25rem] sm:text-6xl lg:text-7xl font-bold text-black dark:text-white mb-6 leading-[1.1] tracking-tight opacity-0" style={{ animation: 'heroFadeIn 0.8s ease-out 0.3s forwards' }}>
+        <h1 className="text-[2rem] sm:text-6xl lg:text-7xl font-bold text-black dark:text-white mb-6 leading-[1.1] tracking-tight opacity-0 break-words" style={{ animation: 'heroFadeIn 0.8s ease-out 0.3s forwards' }}>
           Escala tu negocio
           <br />
           <span className="bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-500 bg-clip-text text-transparent">
@@ -104,12 +104,12 @@ export default function Hero() {
           </p>
           
           {/* Logos carousel */}
-          <div className="relative overflow-hidden max-w-[100vw]">
+          <div className="relative overflow-hidden w-full">
             <div className="flex animate-marquee whitespace-nowrap">
               {[...companies, ...companies].map((company, index) => (
                 <span
                   key={index}
-                  className="mx-8 text-gray-400 dark:text-gray-600 font-bold text-lg tracking-wider hover:text-gray-600 dark:hover:text-gray-400 transition-colors"
+                  className="mx-5 sm:mx-8 text-gray-400 dark:text-gray-600 font-bold text-base sm:text-lg tracking-wider hover:text-gray-600 dark:hover:text-gray-400 transition-colors"
                 >
                   {company}
                 </span>
