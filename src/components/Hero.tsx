@@ -12,7 +12,7 @@ export default function Hero() {
     >
       {/* Gradient background effects */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-gradient-to-b from-emerald-500/10 via-emerald-500/5 to-transparent rounded-full blur-3xl" />
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[min(800px,200vw)] h-[600px] bg-gradient-to-b from-emerald-500/10 via-emerald-500/5 to-transparent rounded-full blur-3xl" />
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-emerald-900/5 dark:from-emerald-500/10 via-transparent to-transparent" />
         
         {/* Grid pattern */}
@@ -35,7 +35,7 @@ export default function Hero() {
         </div>
 
         {/* Main heading */}
-        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-black dark:text-white mb-6 leading-[1.1] tracking-tight opacity-0" style={{ animation: 'heroFadeIn 0.8s ease-out 0.3s forwards' }}>
+        <h1 className="text-[2.25rem] sm:text-6xl lg:text-7xl font-bold text-black dark:text-white mb-6 leading-[1.1] tracking-tight opacity-0" style={{ animation: 'heroFadeIn 0.8s ease-out 0.3s forwards' }}>
           Escala tu negocio
           <br />
           <span className="bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-500 bg-clip-text text-transparent">
@@ -50,10 +50,10 @@ export default function Hero() {
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-20 opacity-0" style={{ animation: 'heroFadeIn 0.8s ease-out 0.7s forwards' }}>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-20 opacity-0 w-full" style={{ animation: 'heroFadeIn 0.8s ease-out 0.7s forwards' }}>
           <Link
             href="#contacto"
-            className="haptic-tap group px-8 py-4 bg-black dark:bg-white hover:bg-gray-800 dark:hover:bg-gray-200 text-white dark:text-black rounded-full font-semibold text-base transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] hover:shadow-xl hover:shadow-black/20 dark:hover:shadow-white/10 flex items-center gap-2"
+            className="haptic-tap group px-6 sm:px-8 py-4 bg-black dark:bg-white hover:bg-gray-800 dark:hover:bg-gray-200 text-white dark:text-black rounded-full font-semibold text-[15px] sm:text-base transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] hover:shadow-xl hover:shadow-black/20 dark:hover:shadow-white/10 flex items-center justify-center gap-2 w-full sm:w-auto"
           >
             Empezar transformación
             <svg
@@ -72,7 +72,7 @@ export default function Hero() {
           </Link>
           <Link
             href="#soluciones"
-            className="px-8 py-4 bg-black/5 dark:bg-white/10 backdrop-blur-sm text-black dark:text-white rounded-full font-semibold text-base border border-black/10 dark:border-white/10 hover:bg-black/10 dark:hover:bg-white/15 transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] flex items-center gap-2"
+            className="px-6 sm:px-8 py-4 bg-black/5 dark:bg-white/10 backdrop-blur-sm text-black dark:text-white rounded-full font-semibold text-[15px] sm:text-base border border-black/10 dark:border-white/10 hover:bg-black/10 dark:hover:bg-white/15 transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] flex items-center justify-center gap-2 w-full sm:w-auto"
           >
             <svg
               className="w-5 h-5"
@@ -104,7 +104,7 @@ export default function Hero() {
           </p>
           
           {/* Logos carousel */}
-          <div className="relative overflow-hidden">
+          <div className="relative overflow-hidden max-w-[100vw]">
             <div className="flex animate-marquee whitespace-nowrap">
               {[...companies, ...companies].map((company, index) => (
                 <span
