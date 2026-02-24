@@ -1,26 +1,257 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+html {
+  scroll-padding-top: 90px;
+}
+
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0a0a0a;
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Marquee animation for company logos */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #333;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #444;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(16, 185, 129, 0.3);
+  color: black;
+}
+
+.dark ::selection {
+  background: rgba(16, 185, 129, 0.3);
+  color: white;
+}
+
+/* Smooth focus ring */
+*:focus-visible {
+  outline: 2px solid rgba(16, 185, 129, 0.5);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+/* Theme toggle animation */
+@keyframes toggleSpin {
+  from { transform: rotate(0deg) scale(0.8); opacity: 0; }
+  to { transform: rotate(360deg) scale(1); opacity: 1; }
+}
+
+@keyframes togglePulse {
+  0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+  70% { box-shadow: 0 0 0 12px rgba(16, 185, 129, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+.theme-toggle-icon {
+  animation: toggleSpin 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.theme-toggle-btn:active {
+  animation: togglePulse 0.6s ease-out;
+}
+
+/* Scroll reveal animation */
+@keyframes scrollReveal {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(32px);
+}
+
+.scroll-reveal.revealed {
+  animation: scrollReveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Hero fade-in animation */
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes messageSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Page transitions (View Transitions API) */
+@keyframes pageSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pageSlideOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+::view-transition-old(root) {
+  animation: pageSlideOut 0.25s ease-in forwards;
+}
+
+::view-transition-new(root) {
+  animation: pageSlideIn 0.35s ease-out forwards;
+}
+
+/* Haptic feedback visual - mobile tap ripple */
+@keyframes tapRipple {
+  0% {
+    transform: scale(0);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+.haptic-tap {
+  position: relative;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.haptic-tap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: rgba(16, 185, 129, 0.15);
+  transform: scale(0);
+  pointer-events: none;
+}
+
+.haptic-tap:active::after {
+  animation: tapRipple 0.5s ease-out;
+}
+
+/* Bottom CTA bar animation */
+@keyframes slideUpCTA {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.bottom-cta-enter {
+  animation: slideUpCTA 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Safe area for bottom CTA on notch devices */
+.safe-area-bottom {
+  padding-bottom: max(12px, env(safe-area-inset-bottom));
+}
+
+/* Add bottom padding on mobile so footer isn't hidden behind sticky CTA */
+@media (max-width: 767px) {
+  footer {
+    padding-bottom: 80px;
+  }
+}
+
+/* Easter egg confetti */
+@keyframes easterEggPop {
+  0% { transform: scale(1); }
+  30% { transform: scale(1.15) rotate(-3deg); }
+  60% { transform: scale(0.95) rotate(2deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+.easter-egg-active {
+  animation: easterEggPop 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
