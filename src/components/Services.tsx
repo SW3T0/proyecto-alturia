@@ -310,22 +310,30 @@ export default function Services() {
           </div>
         </div>
 
-        {/* Consultoría Section */}
-        <div className="mt-6 group relative scroll-reveal bg-gradient-to-b from-black/[0.03] dark:from-white/[0.03] to-transparent border border-black/10 dark:border-white/10 rounded-3xl p-8 hover:border-emerald-500/30 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/5 dark:hover:shadow-white/5 transition-all duration-500">
+        {/* Consultoría Section - Primer paso destacado */}
+        <div className="mt-6 group relative scroll-reveal bg-gradient-to-br from-emerald-500/5 via-emerald-500/[0.02] to-transparent border-2 border-emerald-500/20 rounded-3xl p-8 hover:border-emerald-500/40 hover:-translate-y-1 hover:shadow-lg hover:shadow-emerald-500/10 transition-all duration-500">
+          <div className="absolute top-4 right-4">
+            <span className="px-3 py-1 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-medium rounded-full border border-emerald-500/30">
+              PRIMER PASO
+            </span>
+          </div>
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div className="md:max-w-xl">
-              <h3 className="text-2xl font-bold text-black dark:text-white mb-4">Consultoría Estratégica & Formación</h3>
-              <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                No solo te damos el pescado, te enseñamos a pescar. Formamos a tu equipo en el uso de herramientas de IA para potenciar su productividad diaria.
+              <h3 className="text-2xl font-bold text-black dark:text-white mb-4 mt-4 md:mt-0">¿No sabes por dónde empezar?</h3>
+              <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-2">
+                <strong className="text-black dark:text-white">Auditoría gratuita de tu operativa.</strong> Analizamos tus procesos, identificamos cuellos de botella y te mostramos exactamente dónde la automatización puede ahorrarte tiempo y dinero.
+              </p>
+              <p className="text-gray-500 dark:text-gray-500 text-sm">
+                Sin compromiso. Sin tecnicismos. Solo respuestas claras.
               </p>
             </div>
             <a
               href="#contacto"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/10 rounded-full text-black dark:text-white font-medium hover:bg-black/10 dark:hover:bg-white/15 transition-all duration-300 whitespace-nowrap hover:scale-[1.03] active:scale-[0.97] hover:gap-3"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-black dark:bg-white text-white dark:text-black rounded-full font-semibold hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-300 whitespace-nowrap hover:scale-[1.03] active:scale-[0.97] hover:gap-3 shadow-lg shadow-black/10"
             >
-              Ver planes de formación
+              Solicitar auditoría gratis
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </a>
           </div>

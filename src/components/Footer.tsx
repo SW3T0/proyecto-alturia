@@ -14,7 +14,7 @@ export default function Footer() {
     ],
     empresa: [
       { name: 'Sobre nosotros', href: '#nosotros' },
-      { name: 'Casos de éxito', href: '#metodo' },
+      { name: 'Antes y Después', href: '#resultados' },
       { name: 'Aviso Legal', href: '#' },
       { name: 'Política de Privacidad', href: '#' },
     ],

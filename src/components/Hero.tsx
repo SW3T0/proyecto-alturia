@@ -97,13 +97,12 @@ export default function Hero() {
           </Link>
         </div>
 
-        {/* Trust banner */}
+        {/* Trust banner - Comentado temporalmente hasta tener clientes reales
         <div className="text-center">
           <p className="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-widest mb-6">
             Empresas que confían en nosotros
           </p>
           
-          {/* Logos carousel */}
           <div className="relative overflow-hidden w-full">
             <div className="flex animate-marquee whitespace-nowrap">
               {[...companies, ...companies].map((company, index) => (
@@ -117,6 +116,7 @@ export default function Hero() {
             </div>
           </div>
         </div>
+        */}
       </div>
 
       {/* Scroll indicator */}
