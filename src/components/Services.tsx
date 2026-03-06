@@ -1,8 +1,31 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import { Standard } from '@typebot.io/react';
 
-function ChatDemo() {
+// ============================================================================
+// TYPEBOT REAL - VERSIÓN DE TESTEO
+// Para revertir: comenta TypebotChatDemo y descomenta ChatDemoSimulated
+// ============================================================================
+
+function TypebotChatDemo() {
+  return (
+    <div className="bg-gray-50 dark:bg-white/5 rounded-2xl overflow-hidden border border-black/5 dark:border-white/10">
+      <Standard
+        typebot="alt-i96abre"
+        apiHost="https://typebot-viewer.alturia.net"
+        style={{ width: "100%", height: "380px" }}
+      />
+    </div>
+  );
+}
+
+// ============================================================================
+// SIMULACIÓN ORIGINAL - COMENTADO PARA TESTEO
+// Descomentar esta función y comentar TypebotChatDemo para revertir
+// ============================================================================
+/*
+function ChatDemoSimulated() {
   const [visibleMessages, setVisibleMessages] = useState(0);
   const [isTyping, setIsTyping] = useState(false);
   const [typingBubble, setTypingBubble] = useState<'user' | 'bot' | null>(null);
@@ -114,6 +137,11 @@ function ChatDemo() {
     </div>
   );
 }
+*/
+
+// Alias para usar en el componente - cambiar aquí para alternar entre versiones
+const ChatDemo = TypebotChatDemo;
+// const ChatDemo = ChatDemoSimulated; // Descomentar para usar la simulación
 
 function FlowDemo() {
   const [step, setStep] = useState(0);
