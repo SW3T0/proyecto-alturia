@@ -43,7 +43,7 @@ export default function Navbar() {
   const navLinks = [
     { name: 'Soluciones', href: '#soluciones' },
     { name: 'Método', href: '#metodo' },
-    { name: 'Nosotros', href: '#nosotros' },
+    { name: 'Nosotros', href: '/sobre-nosotros' },
     { name: 'Soporte', href: '#contacto' },
   ];
 

@@ -42,19 +42,21 @@ export default function SobreNosotros() {
       {/* Header */}
       <div className="pt-32 pb-16 px-5 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto">
-          <Link 
-            href="/" 
-            className="inline-flex items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors mb-8"
-          >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-            Volver al inicio
-          </Link>
-          
-          <span className="inline-block px-4 py-2 bg-black/5 dark:bg-white/10 text-emerald-600 dark:text-emerald-400 rounded-full text-xs font-medium mb-6 border border-black/10 dark:border-white/10">
-            SOBRE NOSOTROS
-          </span>
+          <div className="flex items-center justify-between mb-12">
+            <Link 
+              href="/" 
+              className="inline-flex items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+              Volver al inicio
+            </Link>
+            
+            <span className="inline-block px-4 py-2 bg-black/5 dark:bg-white/10 text-emerald-600 dark:text-emerald-400 rounded-full text-xs font-medium border border-black/10 dark:border-white/10">
+              SOBRE NOSOTROS
+            </span>
+          </div>
           
           <h1 className="text-4xl sm:text-5xl font-bold text-black dark:text-white mb-6 leading-tight">
             El factor humano detrás de la
