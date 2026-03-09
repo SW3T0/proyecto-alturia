@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   keywords: ["IA", "Inteligencia Artificial", "Automatización", "Workflows", "Agentes IA", "Machine Learning", "Transformación Digital"],
   authors: [{ name: "Alturia" }],
   icons: {
-    icon: '/favicon.svg',
+    icon: '/alturia_favicon.png',
     apple: '/apple-touch-icon.svg',
   },
   openGraph: {

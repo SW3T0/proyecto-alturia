@@ -10,6 +10,16 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-white dark:bg-[#0a0a0a] transition-colors duration-300 max-w-[100vw]"
     >
+      {/* Logo de fondo grande */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <img 
+          src="/logo_sin_letras.svg" 
+          alt="" 
+          aria-hidden="true"
+          className="w-[80vw] h-[80vw] max-w-[900px] max-h-[900px] object-contain opacity-[0.05] dark:opacity-[0.07] invert dark:invert-0 select-none"
+        />
+      </div>
+
       {/* Gradient background effects */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[min(800px,200vw)] h-[600px] bg-gradient-to-b from-emerald-500/10 via-emerald-500/5 to-transparent rounded-full blur-3xl" />
