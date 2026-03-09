@@ -50,7 +50,7 @@ export default function Contact() {
         <p className="text-gray-500 dark:text-gray-500 text-sm flex items-center justify-center gap-2 mb-4">
           <span>¿Prefieres escribirnos directamente?</span>
           <a
-            href="https://wa.me/34900123456"
+            href="https://wa.me/34687569481"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1 text-green-600 dark:text-green-500 hover:text-green-700 dark:hover:text-green-400 font-medium transition-colors"

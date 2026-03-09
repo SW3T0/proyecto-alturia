@@ -84,10 +84,10 @@ export default function Navbar() {
       >
         <div className="flex justify-between items-center h-12">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-1.5" onClick={(e) => { e.preventDefault(); handleLogoTap(); }}>
+          <Link href="/" className="flex items-center gap-2" onClick={(e) => { e.preventDefault(); handleLogoTap(); }}>
             <div
               ref={logoRef}
-              className={`flex items-center justify-center overflow-hidden transition-all duration-300 ${scrolled ? 'w-9 h-9' : 'w-10 h-10'} ${easterEgg ? 'easter-egg-active' : ''}`}
+              className={`flex items-center justify-center overflow-hidden transition-all duration-300 ${scrolled ? 'w-10 h-10' : 'w-12 h-12'} ${easterEgg ? 'easter-egg-active' : ''}`}
             >
               <img src="/logo_sin_letras.svg" alt="Alturia" className="w-full h-full object-contain invert dark:invert-0 transition-all duration-300" />
             </div>

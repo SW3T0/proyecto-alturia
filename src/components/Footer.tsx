@@ -15,8 +15,8 @@ export default function Footer() {
     empresa: [
       { name: 'Sobre nosotros', href: '#nosotros' },
       { name: 'Antes y Después', href: '#resultados' },
-      { name: 'Aviso Legal', href: '#' },
-      { name: 'Política de Privacidad', href: '#' },
+      { name: 'Aviso Legal', href: '/aviso-legal' },
+      { name: 'Política de Privacidad', href: '/politica-privacidad' },
     ],
   };
 
@@ -27,11 +27,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* Brand column */}
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center space-x-2 mb-6">
-              <div className="w-8 h-8 bg-black dark:bg-white rounded-lg flex items-center justify-center">
-                <span className="text-white dark:text-black font-bold text-lg">A</span>
+            <Link href="/" className="flex items-center gap-2 mb-6">
+              <div className="w-12 h-12 flex items-center justify-center overflow-hidden">
+                <img src="/logo_sin_letras.svg" alt="Alturia" className="w-full h-full object-contain invert dark:invert-0 transition-all duration-300" />
               </div>
-              <span className="text-xl font-bold text-black dark:text-white">
+              <span className="text-lg font-semibold text-black dark:text-white">
                 Alturia
               </span>
             </Link>

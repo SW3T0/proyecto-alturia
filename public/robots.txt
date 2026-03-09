@@ -1,0 +1,22 @@
+# robots.txt para alturia.net
+# https://www.robotstxt.org/
+
+User-agent: *
+Allow: /
+
+# Bloquear rutas de API y archivos internos
+Disallow: /api/
+Disallow: /_next/
+Disallow: /404
+Disallow: /500
+
+# Permitir rastrear recursos estáticos para mejor renderizado
+Allow: /_next/static/
+Allow: /favicon.ico
+Allow: /logo_sin_letras.svg
+
+# Sitemap
+Sitemap: https://alturia.net/sitemap.xml
+
+# Crawl-delay (opcional, para ser amigable con los servidores)
+Crawl-delay: 1
