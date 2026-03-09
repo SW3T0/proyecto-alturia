@@ -1,16 +1,12 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useTheme } from './ThemeProvider';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [tapCount, setTapCount] = useState(0);
-  const [easterEgg, setEasterEgg] = useState(false);
-  const tapTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const logoRef = useRef<HTMLDivElement>(null);
   const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
@@ -24,21 +20,6 @@ export default function Navbar() {
 
   const scrolled = scrollProgress > 0.1;
   const isDark = theme === 'dark';
-
-  // Easter egg: 7 taps on logo
-  const handleLogoTap = () => {
-    if (tapTimerRef.current) clearTimeout(tapTimerRef.current);
-    const next = tapCount + 1;
-    if (next >= 7) {
-      setEasterEgg(true);
-      setTapCount(0);
-      // Reset after animation
-      setTimeout(() => setEasterEgg(false), 3000);
-    } else {
-      setTapCount(next);
-      tapTimerRef.current = setTimeout(() => setTapCount(0), 2000);
-    }
-  };
 
   const navLinks = [
     { name: 'Soluciones', href: '#soluciones' },
@@ -84,10 +65,9 @@ export default function Navbar() {
       >
         <div className="flex justify-between items-center h-12">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2" onClick={(e) => { e.preventDefault(); handleLogoTap(); }}>
+          <Link href="/" className="flex items-center gap-2">
             <div
-              ref={logoRef}
-              className={`flex items-center justify-center overflow-hidden transition-all duration-300 ${scrolled ? 'w-10 h-10' : 'w-12 h-12'} ${easterEgg ? 'easter-egg-active' : ''}`}
+              className={`flex items-center justify-center overflow-hidden transition-all duration-300 ${scrolled ? 'w-10 h-10' : 'w-12 h-12'}`}
             >
               <img src="/logo_sin_letras.svg" alt="Alturia" className="w-full h-full object-contain invert dark:invert-0 transition-all duration-300" />
             </div>
@@ -95,18 +75,6 @@ export default function Navbar() {
               Alturia
             </span>
           </Link>
-
-          {/* Easter egg overlay */}
-          {easterEgg && (
-            <div className="fixed inset-0 pointer-events-none z-[100] flex items-center justify-center">
-              <div className="text-center" style={{ animation: 'heroFadeIn 0.5s ease-out forwards' }}>
-                <p className="text-6xl mb-2">🤖</p>
-                <p className="text-sm font-bold text-emerald-600 dark:text-emerald-400 bg-white/90 dark:bg-black/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
-                  ¡Has encontrado el secreto de Alturia!
-                </p>
-              </div>
-            </div>
-          )}
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-1">

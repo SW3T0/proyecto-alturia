@@ -9,7 +9,7 @@ export default function Footer() {
     servicios: [
       { name: 'Chatbots AI', href: '#soluciones' },
       { name: 'Automatización CRM', href: '#soluciones' },
-      { name: 'Make / Zapier', href: '#soluciones' },
+      { name: 'Flujos de trabajo', href: '#soluciones' },
       { name: 'Consultoría de Datos', href: '#soluciones' },
     ],
     empresa: [
