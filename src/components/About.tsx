@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 export default function About() {
   const pillars = [
     {
@@ -101,7 +103,17 @@ export default function About() {
               </p>
             </div>
 
-            <p className="text-emerald-600 dark:text-emerald-400 font-medium mb-12">— El equipo de Alturia.</p>
+            <p className="text-emerald-600 dark:text-emerald-400 font-medium mb-8">— El equipo de Alturia.</p>
+
+            <Link
+              href="/sobre-nosotros"
+              className="inline-flex items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white text-sm font-medium transition-colors mb-12"
+            >
+              Conoce nuestra historia
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </Link>
 
             {/* Quote */}
             <div className="bg-black/[0.02] dark:bg-white/[0.03] border border-black/10 dark:border-white/10 rounded-3xl p-8 md:p-12">

@@ -13,7 +13,7 @@ export default function Footer() {
       { name: 'Consultoría de Datos', href: '#soluciones' },
     ],
     empresa: [
-      { name: 'Sobre nosotros', href: '#nosotros' },
+      { name: 'Sobre nosotros', href: '/sobre-nosotros' },
       { name: 'Antes y Después', href: '#resultados' },
       { name: 'Aviso Legal', href: '/aviso-legal' },
       { name: 'Política de Privacidad', href: '/politica-privacidad' },
