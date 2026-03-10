@@ -12,7 +12,7 @@ function TypebotChatDemo() {
   return (
     <div className="bg-gray-50 dark:bg-white/5 rounded-2xl overflow-hidden border border-black/5 dark:border-white/10">
       <Standard
-        typebot="alt-i96abre"
+        typebot="alt-alturia-assistant-zuomfwy"
         apiHost="https://typebot-viewer.alturia.net"
         style={{ width: "100%", height: "380px" }}
       />
